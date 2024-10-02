@@ -19,6 +19,9 @@
 	font-size: $fs-800;
 	letter-spacing: 0px;
 	font-family: $ff-serif;
+	@media screen and (max-width: $break-mobile) {
+		font-size: $fs-700;
+	}
 }
 @mixin text-preset-3 {
 	font-size: $fs-700;
