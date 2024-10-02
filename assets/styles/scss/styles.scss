@@ -3,6 +3,9 @@
 @import 'mixins';
 @import 'utilities';
 
+html {
+	overflow-x: hidden;
+}
 
 ul {
 	list-style: none;
