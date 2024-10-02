@@ -38,11 +38,17 @@ body {
 		@media screen and (max-width: $break-tablet) {
 			background-image: url('../../img/background-home-tablet.jpg');
 		}
+		@media screen and (max-width: $break-mobile) {
+			background-image: url('../../img/background-home-mobile.jpg');
+		}
 	}
 	&--destination {
 		background-image: url('../../img/background-destination-desktop.jpg');
 		@media screen and (max-width: $break-tablet) {
 			background-image: url('../../img/background-destination-tablet.jpg');
+		}
+		@media screen and (max-width: $break-mobile) {
+			background-image: url('../../img/background-destination-mobile.jpg');
 		}
 	}
 }

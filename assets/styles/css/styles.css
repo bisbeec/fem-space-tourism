@@ -375,12 +375,22 @@ body.body-no-scroll {
     background-image: url("../../img/background-home-tablet.jpg");
   }
 }
+@media screen and (max-width: 620px) {
+  .body--home {
+    background-image: url("../../img/background-home-mobile.jpg");
+  }
+}
 .body--destination {
   background-image: url("../../img/background-destination-desktop.jpg");
 }
 @media screen and (max-width: 890px) {
   .body--destination {
     background-image: url("../../img/background-destination-tablet.jpg");
+  }
+}
+@media screen and (max-width: 620px) {
+  .body--destination {
+    background-image: url("../../img/background-destination-mobile.jpg");
   }
 }
 
