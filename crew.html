@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Crew | Space, Cowboys</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Bellefair&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="assets/styles/css/styles.css">
+	<link rel="stylesheet" type="text/css" href="assets/OwlCarousel2-2.3.4/dist/assets/owl.carousel.min.css">
+
+</head>
+<body class="body body--crew">
+
+	<header class="primary-header | d-flex d-flex--justify">
+		<div class="logo-wrap">
+			<img src="assets/img/logo.svg" alt="logo">
+		</div>
+		
+		<button class="mobile-nav-toggle | d-none" aria-controls="main-nav">
+			<span class="sr-only" aria-expanded="false">Menu</span>
+		</button>
+		<nav class="main-nav">
+			<ul class="d-flex text-uppercase text-preset-8">
+				<li>
+					<a href="index.html">
+						<span>00</span>
+						Home
+					</a>
+				</li>
+				<li>
+					<a href="destination.html">
+						<span>01</span>
+						Destination
+					</a>
+				</li>
+				<li>
+					<a href="crew.html" class="active">
+						<span>02</span>
+						Crew
+					</a>
+				</li>
+				<li>
+					<a href="technology.html">
+						<span>03</span>
+						Technology
+					</a>
+				</li>
+			</ul>
+		</nav>
+	</header>
+	<main>
+		<div class="container">
+			<h1 class="interior-page-heading"><span>02</span> Meet Your Crew</h1>
+
+			<div class="owl-carousel crew-carousel">
+				<div class="slide">
+					<div class="d-flex d-flex--justify gap4 | col-wrap col-wrap--center">
+						<div class="col col-50">
+							<h2 class="title">Commander</h2>
+							<h2 class="name">Douglas Hurley</h2>
+							<p>Douglas Gerald Hurley is an American engineer, former Marine Corps pilot and former NASA astronaut. He launched into space for the third time as commander of Crew Dragon Demo-2.</p>
+						</div>
+						<div class="col col-50">
+							<img src="assets/img/image-douglas-hurley.webp" alt="Douglas Hurley">
+						</div>
+					</div>
+				</div>
+
+				<div class="slide">
+					<div class="d-flex d-flex--justify gap4 | col-wrap col-wrap--center">
+						<div class="col col-50">
+							<h2 class="title">Mission Specialist</h2>
+							<h2 class="name">Mark Shuttleworth</h2>
+							<p>Mark Richard Shuttleworth is the founder and CEO of Canonical, the company behind the Linux-based Ubuntu operating system. Shuttleworth became the first South African to travel to space as a space tourist.</p>
+						</div>
+						<div class="col col-50">
+							<img src="assets/img/image-mark-shuttleworth.webp" alt="Mark Shuttleworth">
+						</div>
+					</div>
+				</div>
+
+				<div class="slide">
+					<div class="d-flex d-flex--justify gap4 | col-wrap col-wrap--center">
+						<div class="col col-50">
+							<h2 class="title">Pilot</h2>
+							<h2 class="name">Victor Glover</h2>
+							<p>Pilot on the first operational flight of the SpaceX Crew Dragon to the International Space Station. Glover is a commander in the U.S. Navy where he pilots an F/A-18.He was a crew member of Expedition 64, and served as a station systems flight engineer.</p>
+						</div>
+						<div class="col col-50">
+							<img src="assets/img/image-victor-glover.webp" alt="Victor Glover">
+						</div>
+					</div>
+				</div>
+
+				<div class="slide">
+					<div class="d-flex d-flex--justify gap4 | col-wrap col-wrap--center">
+						<div class="col col-50">
+							<h2 class="title">Flight Engineer</h2>
+							<h2 class="name">Anousheh Ansari</h2>
+							<p>Anousheh Ansari is an Iranian American engineer and co-founder of Prodea Systems. Ansari was the fourth self-funded space tourist, the first self-funded woman to fly to the ISS, and the first Iranian in space.</p>
+						</div>
+						<div class="col col-50">
+							<img src="assets/img/image-anousheh-ansari.webp" alt="Anousheh Ansari">
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</main>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script type="text/javascript" src="assets/OwlCarousel2-2.3.4/dist/owl.carousel.min.js"></script>
+	<script type="text/javascript" src="assets/js/main.js"></script>
+	<script type="text/javascript">
+		$(".owl-carousel").owlCarousel({
+        autoplay: false,
+        items: 1,
+        loop: true,
+        lazyLoad: true,
+      });
+	</script>
+</body>
+</html>

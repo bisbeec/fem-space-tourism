@@ -74,6 +74,10 @@ p, h1, h2, h3, h4, h5, h6 {
   width: 40%;
 }
 
+.text-right {
+  text-align: right;
+}
+
 .sr-only {
   position: absolute;
   left: -10000px;
@@ -290,6 +294,12 @@ p, h1, h2, h3, h4, h5, h6 {
   font-size: 3.5rem;
   letter-spacing: 0px;
   font-family: "Bellefair", serif;
+  line-height: normal;
+}
+@media screen and (max-width: 620px) {
+  .text-preset-3 {
+    font-size: 2rem;
+  }
 }
 
 .text-preset-4 {
@@ -402,6 +412,19 @@ body.body-no-scroll {
     background-image: url("../../img/background-destination-mobile.jpg");
   }
 }
+.body--crew {
+  background-image: url("../../img/background-crew-desktop.jpg");
+}
+@media screen and (max-width: 890px) {
+  .body--crew {
+    background-image: url("../../img/background-crew-tablet.jpg");
+  }
+}
+@media screen and (max-width: 620px) {
+  .body--crew {
+    background-image: url("../../img/background-crew-mobile.jpg");
+  }
+}
 
 .body.body--home .primary-header {
   margin-bottom: 13em;
@@ -464,7 +487,7 @@ body.body-no-scroll {
           justify-content: flex-end;
   padding-right: 11%;
   overflow: hidden;
-  z-index: 1;
+  z-index: 2;
 }
 @supports ((-webkit-backdrop-filter: blur(1rem)) or (backdrop-filter: blur(1rem))) {
   .primary-header .main-nav {
@@ -510,8 +533,8 @@ body.body-no-scroll {
     display: block;
     position: absolute;
     right: 25px;
-    top: 8px;
-    z-index: 2;
+    top: 6px;
+    z-index: 3;
     width: 30px;
     aspect-ratio: 1;
     background-image: url(../../img/icon-hamburger.svg);
@@ -557,9 +580,6 @@ body.body-no-scroll {
   }
 }
 
-main {
-  padding-bottom: 8em;
-}
 main .interior-page-heading {
   font-size: 1.75rem;
   letter-spacing: 4px;
@@ -577,6 +597,11 @@ main .interior-page-heading span {
   font-weight: 700;
   margin-right: 0.5em;
 }
+@media screen and (max-width: 620px) {
+  main .interior-page-heading {
+    text-align: center;
+  }
+}
 @media screen and (max-width: 890px) {
   main .col-wrap {
     -webkit-box-orient: vertical;
@@ -584,39 +609,40 @@ main .interior-page-heading span {
         -ms-flex-direction: column;
             flex-direction: column;
   }
-  main .col-wrap .col {
-    width: 100%;
-    max-width: 80%;
-    margin-inline: auto;
-    text-align: center;
-  }
-  main .col-wrap .col.btn-col {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    margin-top: 2em;
+}
+main .col-wrap .col.col-max-width {
+  max-width: 540px;
+}
+@media screen and (max-width: 890px) {
+  main .col-wrap .col.col-max-width {
+    max-width: 100%;
   }
 }
 @media screen and (max-width: 890px) {
   main .col-wrap .col {
-    max-width: 100%;
+    text-align: center;
+    width: 100%;
   }
 }
-main .col-home-page {
-  max-width: 435px;
+main .col-wrap--center {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
-@media screen and (max-width: 620px) {
-  main .col-home-page {
-    max-width: 100%;
+main .col-wrap--baseline {
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+@media screen and (max-width: 890px) {
+  main .col-wrap--baseline {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
-}
-main .col-home-page.btn-col {
-  -ms-flex-item-align: end;
-      -ms-grid-row-align: end;
-      align-self: end;
+  main .col-wrap--baseline .btn-large {
+    margin: 2em auto;
+  }
 }
 main .tabs-wrap {
   list-style: none;
@@ -659,6 +685,11 @@ main .tab h1 {
     font-size: 3.5rem;
   }
 }
+@media screen and (max-width: 620px) {
+  main .tab h1 {
+    margin-block: 0.5em;
+  }
+}
 main .tab p {
   text-align: justify;
 }
@@ -670,7 +701,7 @@ main .tab p {
 main .tab .tab-bottom {
   border-top: 1px solid rgba(255, 255, 255, 0.3);
   margin-top: 2em;
-  padding-top: 2em;
+  padding-block: 2em;
 }
 @media screen and (max-width: 890px) {
   main .tab .tab-bottom {
@@ -699,4 +730,96 @@ main .tab .tab-bottom .tab-bottom-sec p:nth-of-type(2) {
   font-size: 1.75rem;
   letter-spacing: 0px;
   font-family: "Bellefair", serif;
+}
+main .crew-carousel .slide::after {
+  content: "";
+  background: aqua;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 10%;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(11, 13, 23, 0)), to(#0b0d17));
+  background: linear-gradient(rgba(11, 13, 23, 0), #0b0d17);
+}
+main .crew-carousel .title {
+  font-size: 2rem;
+  letter-spacing: 0px;
+  font-family: "Bellefair", serif;
+  text-transform: uppercase;
+  opacity: 0.5;
+}
+@media screen and (max-width: 620px) {
+  main .crew-carousel .title {
+    font-size: 1.125rem;
+  }
+}
+main .crew-carousel .name {
+  font-size: 3.5rem;
+  letter-spacing: 0px;
+  font-family: "Bellefair", serif;
+  line-height: normal;
+  text-transform: uppercase;
+  margin-block: 0.5em;
+}
+@media screen and (max-width: 620px) {
+  main .crew-carousel .name {
+    font-size: 2rem;
+  }
+}
+main .crew-carousel p {
+  position: relative;
+  z-index: 1;
+}
+main .crew-carousel img {
+  max-width: 370px;
+  float: right;
+}
+@media screen and (max-width: 890px) {
+  main .crew-carousel img {
+    float: none;
+    margin-inline: auto;
+  }
+}
+@media screen and (max-width: 890px) {
+  main .crew-carousel img {
+    margin-top: 4em;
+  }
+}
+main .crew-carousel .owl-dots {
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1em;
+  position: relative;
+  top: -3em;
+}
+@media screen and (max-width: 890px) {
+  main .crew-carousel .owl-dots {
+    position: absolute;
+    top: 38vh;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    width: 100%;
+    z-index: -1;
+  }
+}
+@media screen and (max-width: 620px) {
+  main .crew-carousel .owl-dots {
+    top: 30vh;
+  }
+}
+main .crew-carousel .owl-dots .owl-dot {
+  background-color: #fff;
+  width: 10px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  opacity: 0.5;
+}
+main .crew-carousel .owl-dots .owl-dot.active {
+  opacity: 1;
 }

@@ -4,12 +4,10 @@
 	padding-inline: $gutter;
 }
 
-.col-50 {
-	width: 50%;
-}
-.col-40 {
-	width: 40%;
-}
+.col-50 {width: 50%;}
+.col-40 {width: 40%;}
+
+.text-right {text-align: right;}
 
 .sr-only {
 	position:absolute;
