@@ -435,6 +435,13 @@ body.body-no-scroll {
   position: relative;
   z-index: 2;
 }
+@media screen and (max-width: 620px) {
+  .primary-header .logo-wrap {
+    width: 40px;
+    height: 40px;
+    margin-left: 25px;
+  }
+}
 .primary-header .main-nav {
   position: absolute;
   background: rgba(11, 13, 23, 0.95);
