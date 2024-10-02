@@ -1,0 +1,101 @@
+.container {
+	max-width: 1110px;
+	margin-inline: auto;
+	padding-inline: $gutter;
+}
+
+.col-50 {
+	width: 50%;
+}
+.col-40 {
+	width: 40%;
+}
+
+.sr-only {
+	position:absolute;
+	left:-10000px;
+	top:auto;
+	width:1px;
+	height:1px;
+	overflow:hidden;
+}
+
+.d-none {display: none}
+.d-block {display: block}
+.d-flex {display: flex;
+	&--justify {
+		justify-content: space-between;
+	}
+}
+.gap1 {gap: 1em} .gap2 {gap: 2em} .gap3 {gap: 3em} .gap4 {gap: 4em} .gap5 {gap: 5em} .gap6 {gap: 6em}
+
+.btn-large {
+	background-color: $white;
+	color: $blue900;
+	@include text-preset-4;
+	border-radius: 50%;
+	text-transform: uppercase;
+	width: 250px; aspect-ratio: 1/1;
+	@include flexCenter;
+	position: relative;
+	&::after {
+		content: "";
+		background: rgba($white, .3);
+		position: absolute;
+		left: 50%; top: 50%;
+		translate: -50% -50%;
+		width: 200%; aspect-ratio: 1/1;
+		border-radius: inherit;
+		scale: 0;
+		transition: .3s scale ease;
+	}
+	&:hover::after, &:focus-visible::after {
+		scale: 1;
+	}
+	@media screen and (max-width: $break-mobile) {
+		width: 144px;
+	}
+}
+
+.bg-dark {background-color: $blue900}
+.bg-light {background-color: $blue100}
+.bg-white {background-color: #fff}
+
+.text-dark {color: $blue900}
+.text-light {color: $blue100}
+.text-white {color: #fff}
+
+
+/* typography */
+
+.ff-serif {font-family: $ff-serif}
+.ff-sans-cond {font-family: $ff-sans-cond}
+.ff-sans-normal {font-family: $ff-sans-normal}
+
+.letter-spacing-1 {letter-spacing: 4px}
+.letter-spacing-2 {letter-spacing: 2.7px}
+.letter-spacing-3 {letter-spacing: 2.35px}
+.letter-spacing-4 {letter-spacing: 2px}
+
+.fs-900 {font-size: $fs-900}
+.fs-800 {font-size: $fs-800}
+.fs-700 {font-size: $fs-700}
+.fs-600 {font-size: $fs-600}
+.fs-500 {font-size: $fs-500}
+.fs-400 {font-size: 1.125rem}
+.fs-300 {font-size: 1rem}
+.fs-200 {font-size: $fs-200}
+
+.text-uppercase {text-transform: uppercase}
+
+// text presets //
+.text-preset-1 {@include text-preset-1}
+.text-preset-2 {@include text-preset-2}
+.text-preset-3 {@include text-preset-3}
+.text-preset-4 {@include text-preset-4}
+.text-preset-5 {@include text-preset-5}
+.text-preset-6 {@include text-preset-6}
+.text-preset-7 {@include text-preset-7}
+.text-preset-8 {@include text-preset-8}
+.text-preset-9 {@include text-preset-9}
+

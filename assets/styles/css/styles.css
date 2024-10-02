@@ -1,0 +1,671 @@
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+
+/*
+  Typographic tweaks!
+  3. Add accessible line-height
+  4. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/*
+  5. Improve media defaults
+*/
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/*
+  6. Remove built-in form typography styles
+*/
+input, button, textarea, select {
+  font: inherit;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+/*
+  7. Avoid text overflows
+*/
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/*
+  8. Create a root stacking context
+*/
+#root, #__next {
+  isolation: isolate;
+}
+
+.container {
+  max-width: 1110px;
+  margin-inline: auto;
+  padding-inline: 25px;
+}
+
+.col-50 {
+  width: 50%;
+}
+
+.col-40 {
+  width: 40%;
+}
+
+.sr-only {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.d-none {
+  display: none;
+}
+
+.d-block {
+  display: block;
+}
+
+.d-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.d-flex--justify {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.gap1 {
+  gap: 1em;
+}
+
+.gap2 {
+  gap: 2em;
+}
+
+.gap3 {
+  gap: 3em;
+}
+
+.gap4 {
+  gap: 4em;
+}
+
+.gap5 {
+  gap: 5em;
+}
+
+.gap6 {
+  gap: 6em;
+}
+
+.btn-large {
+  background-color: #fff;
+  color: #0B0D17;
+  font-size: 2rem;
+  letter-spacing: 0px;
+  font-family: "Bellefair", serif;
+  border-radius: 50%;
+  text-transform: uppercase;
+  width: 250px;
+  aspect-ratio: 1/1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+@media screen and (max-width: 620px) {
+  .btn-large {
+    font-size: 1.125rem;
+  }
+}
+.btn-large::after {
+  content: "";
+  background: rgba(255, 255, 255, 0.3);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
+  width: 200%;
+  aspect-ratio: 1/1;
+  border-radius: inherit;
+  scale: 0;
+  -webkit-transition: 0.3s scale ease;
+  transition: 0.3s scale ease;
+}
+.btn-large:hover::after, .btn-large:focus-visible::after {
+  scale: 1;
+}
+@media screen and (max-width: 620px) {
+  .btn-large {
+    width: 144px;
+  }
+}
+
+.bg-dark {
+  background-color: #0B0D17;
+}
+
+.bg-light {
+  background-color: #D0D6F9;
+}
+
+.bg-white {
+  background-color: #fff;
+}
+
+.text-dark {
+  color: #0B0D17;
+}
+
+.text-light {
+  color: #D0D6F9;
+}
+
+.text-white {
+  color: #fff;
+}
+
+/* typography */
+.ff-serif {
+  font-family: "Bellefair", serif;
+}
+
+.ff-sans-cond {
+  font-family: "Barlow Condensed", sans-serif;
+}
+
+.ff-sans-normal {
+  font-family: "Barlow", sans-serif;
+}
+
+.letter-spacing-1 {
+  letter-spacing: 4px;
+}
+
+.letter-spacing-2 {
+  letter-spacing: 2.7px;
+}
+
+.letter-spacing-3 {
+  letter-spacing: 2.35px;
+}
+
+.letter-spacing-4 {
+  letter-spacing: 2px;
+}
+
+.fs-900 {
+  font-size: 9rem;
+}
+
+.fs-800 {
+  font-size: 6.25rem;
+}
+
+.fs-700 {
+  font-size: 3.5rem;
+}
+
+.fs-600 {
+  font-size: 2rem;
+}
+
+.fs-500 {
+  font-size: 1.75rem;
+}
+
+.fs-400 {
+  font-size: 1.125rem;
+}
+
+.fs-300 {
+  font-size: 1rem;
+}
+
+.fs-200 {
+  font-size: 0.875rem;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.text-preset-1 {
+  font-size: 9rem;
+  letter-spacing: 0px;
+  font-family: "Bellefair", serif;
+}
+@media screen and (max-width: 620px) {
+  .text-preset-1 {
+    font-size: 6.25rem;
+  }
+}
+
+.text-preset-2 {
+  font-size: 6.25rem;
+  letter-spacing: 0px;
+  font-family: "Bellefair", serif;
+}
+
+.text-preset-3 {
+  font-size: 3.5rem;
+  letter-spacing: 0px;
+  font-family: "Bellefair", serif;
+}
+
+.text-preset-4 {
+  font-size: 2rem;
+  letter-spacing: 0px;
+  font-family: "Bellefair", serif;
+}
+@media screen and (max-width: 620px) {
+  .text-preset-4 {
+    font-size: 1.125rem;
+  }
+}
+
+.text-preset-5 {
+  font-size: 1.75rem;
+  letter-spacing: 4px;
+  font-family: "Barlow Condensed", sans-serif;
+}
+@media screen and (max-width: 620px) {
+  .text-preset-5 {
+    font-size: 1.125rem;
+  }
+}
+
+.text-preset-6 {
+  font-size: 1.75rem;
+  letter-spacing: 0px;
+  font-family: "Bellefair", serif;
+}
+
+.text-preset-7 {
+  font-size: 0.875rem;
+  letter-spacing: 2px;
+  font-family: "Barlow Condensed", sans-serif;
+}
+
+.text-preset-8 {
+  font-size: 16px;
+  letter-spacing: 2px;
+  font-family: "Barlow Condensed", sans-serif;
+}
+
+.text-preset-9 {
+  font-size: 18px;
+  letter-spacing: 0px;
+  font-family: "Barlow", sans-serif;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  font-weight: 400;
+}
+
+body {
+  line-height: 1.5;
+  min-height: 100vh;
+  font-family: "Barlow", sans-serif;
+  font-size: 1.125rem;
+  color: #fff;
+  background-color: #0B0D17;
+  overflow-x: hidden;
+}
+body * {
+  color: #fff;
+}
+body.body-no-scroll {
+  overflow-y: hidden;
+}
+
+.body {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.body--home {
+  background-image: url("../../img/background-home-desktop.jpg");
+}
+@media screen and (max-width: 890px) {
+  .body--home {
+    background-image: url("../../img/background-home-tablet.jpg");
+  }
+}
+.body--destination {
+  background-image: url("../../img/background-destination-desktop.jpg");
+}
+@media screen and (max-width: 890px) {
+  .body--destination {
+    background-image: url("../../img/background-destination-tablet.jpg");
+  }
+}
+
+.body.body--home .primary-header {
+  margin-bottom: 13em;
+}
+@media screen and (max-width: 890px) {
+  .body.body--home .primary-header {
+    margin-bottom: 8em;
+  }
+}
+@media screen and (max-width: 620px) {
+  .body.body--home .primary-header {
+    margin-bottom: 4em;
+  }
+}
+
+.primary-header {
+  margin-top: 3em;
+  margin-bottom: 4em;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+.primary-header::after {
+  content: "";
+  height: 1px;
+  width: 40%;
+  background: rgba(255, 255, 255, 0.2);
+  position: absolute;
+  left: 10%;
+}
+.primary-header .logo-wrap {
+  margin-left: 50px;
+  width: 45px;
+  height: 45px;
+  position: relative;
+  z-index: 2;
+}
+.primary-header .main-nav {
+  position: absolute;
+  background: rgba(11, 13, 23, 0.95);
+  right: 0;
+  width: 750px;
+  height: 96px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  padding-right: 11%;
+  overflow: hidden;
+  z-index: 1;
+}
+@supports ((-webkit-backdrop-filter: blur(1rem)) or (backdrop-filter: blur(1rem))) {
+  .primary-header .main-nav {
+    -webkit-backdrop-filter: blur(1.25rem);
+            backdrop-filter: blur(1.25rem);
+    background: rgba(255, 255, 255, 0.15);
+  }
+}
+.primary-header .main-nav ul {
+  gap: 2.5em;
+}
+.primary-header .main-nav ul li a {
+  display: block;
+  padding-block: 34px;
+  border-bottom: 3px solid transparent;
+  -webkit-transition: 0.3s border-color ease;
+  transition: 0.3s border-color ease;
+}
+.primary-header .main-nav ul li a span {
+  font-weight: 700;
+  margin-right: 5px;
+}
+.primary-header .main-nav ul li a:hover, .primary-header .main-nav ul li a:focus-visible {
+  border-color: rgba(255, 255, 255, 0.5);
+}
+.primary-header .main-nav ul li a.active {
+  border-color: #fff;
+}
+@media screen and (max-width: 890px) {
+  .primary-header {
+    margin-top: 26px;
+  }
+  .primary-header::after {
+    content: none;
+  }
+  .primary-header .main-nav {
+    width: 640px;
+    padding-right: 25px;
+  }
+}
+@media screen and (max-width: 620px) {
+  .primary-header .mobile-nav-toggle {
+    display: block;
+    position: absolute;
+    right: 25px;
+    top: 8px;
+    z-index: 2;
+    width: 30px;
+    aspect-ratio: 1;
+    background-image: url(../../img/icon-hamburger.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .primary-header .mobile-nav-toggle.menu-opened {
+    background-image: url(../../img/icon-close.svg);
+  }
+  .primary-header .main-nav {
+    display: block;
+    padding-right: 0;
+    padding-left: 25px;
+    overflow: initial;
+    position: fixed;
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    max-width: 70%;
+    top: -26px;
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+    -webkit-transition: 0.5s -webkit-transform ease-in-out;
+    transition: 0.5s -webkit-transform ease-in-out;
+    transition: 0.5s transform ease-in-out;
+    transition: 0.5s transform ease-in-out, 0.5s -webkit-transform ease-in-out;
+  }
+  .primary-header .main-nav.menu-show {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  .primary-header .main-nav ul {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-top: 8em;
+  }
+  .primary-header .main-nav ul li a {
+    padding-block: 10px;
+    border-bottom: none;
+    border-right: 3px solid transparent;
+  }
+}
+
+main {
+  padding-bottom: 8em;
+}
+main .interior-page-heading {
+  font-size: 1.75rem;
+  letter-spacing: 4px;
+  font-family: "Barlow Condensed", sans-serif;
+  text-transform: uppercase;
+  margin-bottom: 3em;
+}
+@media screen and (max-width: 620px) {
+  main .interior-page-heading {
+    font-size: 1.125rem;
+  }
+}
+main .interior-page-heading span {
+  opacity: 0.5;
+  font-weight: 700;
+  margin-right: 0.5em;
+}
+@media screen and (max-width: 890px) {
+  main .col-wrap {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  main .col-wrap .col {
+    width: 100%;
+    max-width: 80%;
+    margin-inline: auto;
+    text-align: center;
+  }
+  main .col-wrap .col.btn-col {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin-top: 2em;
+  }
+}
+@media screen and (max-width: 890px) {
+  main .col-wrap .col {
+    max-width: 100%;
+  }
+}
+main .col-home-page {
+  max-width: 435px;
+}
+@media screen and (max-width: 620px) {
+  main .col-home-page {
+    max-width: 100%;
+  }
+}
+main .col-home-page.btn-col {
+  -ms-flex-item-align: end;
+      -ms-grid-row-align: end;
+      align-self: end;
+}
+main .tabs-wrap {
+  list-style: none;
+}
+@media screen and (max-width: 890px) {
+  main .tabs-wrap {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+main .tabs-wrap button {
+  text-transform: uppercase;
+  font-size: 16px;
+  letter-spacing: 2px;
+  font-family: "Barlow Condensed", sans-serif;
+  padding-bottom: 4px;
+  border-bottom: 3px solid transparent;
+}
+main .tabs-wrap button.active {
+  border-color: #fff;
+}
+main .planet-img, main .tab {
+  display: none;
+}
+main .planet-img.active, main .tab.active {
+  display: block;
+}
+main .planet-img img {
+  width: 100%;
+}
+main .tab h1 {
+  font-size: 6.25rem;
+  letter-spacing: 0px;
+  font-family: "Bellefair", serif;
+  text-transform: uppercase;
+}
+main .tab p {
+  text-align: justify;
+}
+@media screen and (max-width: 890px) {
+  main .tab p {
+    text-align: center;
+  }
+}
+main .tab .tab-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  margin-top: 2em;
+  padding-top: 2em;
+}
+@media screen and (max-width: 890px) {
+  main .tab .tab-bottom {
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+}
+@media screen and (max-width: 620px) {
+  main .tab .tab-bottom {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+main .tab .tab-bottom .tab-bottom-sec p {
+  text-transform: uppercase;
+}
+main .tab .tab-bottom .tab-bottom-sec p:first-of-type {
+  font-size: 0.875rem;
+  letter-spacing: 2px;
+  font-family: "Barlow Condensed", sans-serif;
+  color: #D0D6F9;
+}
+main .tab .tab-bottom .tab-bottom-sec p:nth-of-type(2) {
+  font-size: 1.75rem;
+  letter-spacing: 0px;
+  font-family: "Bellefair", serif;
+}
