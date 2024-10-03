@@ -114,7 +114,7 @@ body {
 
 		@supports (backdrop-filter: blur(1rem)) {
 			backdrop-filter: blur(1.25rem);
-			background: rgba($white, .15);
+			background: rgba($white, .1);
 		}
 		ul {
 			gap: 2.5em;
@@ -199,7 +199,6 @@ body {
 
 
 main {
-	//padding-bottom: 8em;
 	.interior-page-heading {
 		@include text-preset-5;
 		text-transform: uppercase;
@@ -356,19 +355,18 @@ main {
 			width: min-content;
 			display: flex;
 			gap: 1em;
-			//position: absolute;
-			//bottom: 3em;
 			position: relative;
 			top: -3em;
 			@media screen and (max-width: $break-tablet) {
 				position: absolute;
-				top: 38vh;
+				top: auto;
+				bottom: 70%;
 				justify-content: center;
 				width: 100%;
 				z-index: -1;
 			}
 			@media screen and (max-width: $break-mobile) {
-				top: 30vh;
+				bottom: 65%;
 			}
 			.owl-dot {
 				background-color: $white;

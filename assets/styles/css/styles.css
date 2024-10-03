@@ -493,7 +493,7 @@ body.body-no-scroll {
   .primary-header .main-nav {
     -webkit-backdrop-filter: blur(1.25rem);
             backdrop-filter: blur(1.25rem);
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.1);
   }
 }
 .primary-header .main-nav ul {
@@ -800,7 +800,8 @@ main .crew-carousel .owl-dots {
 @media screen and (max-width: 890px) {
   main .crew-carousel .owl-dots {
     position: absolute;
-    top: 38vh;
+    top: auto;
+    bottom: 70%;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
@@ -810,7 +811,7 @@ main .crew-carousel .owl-dots {
 }
 @media screen and (max-width: 620px) {
   main .crew-carousel .owl-dots {
-    top: 30vh;
+    bottom: 65%;
   }
 }
 main .crew-carousel .owl-dots .owl-dot {
