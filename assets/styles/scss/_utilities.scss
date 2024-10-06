@@ -4,10 +4,14 @@
 	padding-inline: $gutter;
 }
 
+.col-70 {width: 70%;}
+.col-60 {width: 60%;}
 .col-50 {width: 50%;}
 .col-40 {width: 40%;}
 
 .text-right {text-align: right;}
+.text-center {text-align: center}
+.text-justify {text-align: justify}
 
 .sr-only {
 	position:absolute;
@@ -24,10 +28,13 @@
 	&--justify {
 		justify-content: space-between;
 	}
+	&--align-center {
+		align-items: center;
+	}
 }
 .gap1 {gap: 1em} .gap2 {gap: 2em} .gap3 {gap: 3em} .gap4 {gap: 4em} .gap5 {gap: 5em} .gap6 {gap: 6em}
 
-.btn-large {
+.btn-large, .btn-small {
 	background-color: $white;
 	color: $blue900;
 	@include text-preset-4;
@@ -55,6 +62,26 @@
 	}
 }
 
+.btn-small {
+	width: 80px;
+	background-color: transparent;
+	color: $white;
+	border: 1px solid $white;
+	&::after {
+		content: none;
+	}
+	&.active {
+		background-color: $white;
+		color: $blue900;
+	}
+	@media screen and (max-width: $break-tablet) {
+		width: 56px;
+	}
+	@media screen and (max-width: $break-mobile) {
+		width: 40px;
+	}
+}
+
 .bg-dark {background-color: $blue900}
 .bg-light {background-color: $blue100}
 .bg-white {background-color: #fff}
@@ -62,6 +89,8 @@
 .text-dark {color: $blue900}
 .text-light {color: $blue100}
 .text-white {color: #fff}
+
+.text-opaque {opacity: .5}
 
 
 /* typography */

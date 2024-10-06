@@ -13,31 +13,32 @@ $(document).ready(function() {
     });
 
 
-    $(".tabs-wrap button").click(function() {
-      $(".tabs-wrap button").removeClass("active");
+    $(".tab-btn").click(function() {
+      $(".tab-btn").removeClass("active");
       $(".tab").removeClass("active");
-      $(".planet-img").removeClass("active");
+      $(".tab-img").removeClass("active");
       $(this).addClass("active");
     });
 
-    $(".tabs-wrap .button-moon").click(function() {
-      $(".tab-moon").addClass("active");
-      $(".planet-img-moon").addClass("active");
+    $(".tab-btn-1").click(function() {
+      $(".tab-1").addClass("active");
+      $(".tab-img-1").addClass("active");
     });
 
-    $(".tabs-wrap .button-mars").click(function() {
-      $(".tab-mars").addClass("active");
-      $(".planet-img-mars").addClass("active");
+    $(".tab-btn-2").click(function() {
+      $(".tab-2").addClass("active");
+      $(".tab-img-2").addClass("active");
     });
 
-    $(".tabs-wrap .button-europa").click(function() {
-      $(".tab-europa").addClass("active");
-      $(".planet-img-europa").addClass("active");
+    $(".tab-btn-3").click(function() {
+      $(".tab-3").addClass("active");
+      $(".tab-img-3").addClass("active");
     });
-    $(".tabs-wrap .button-titan").click(function() {
-      $(".tab-titan").addClass("active");
-      $(".planet-img-titan").addClass("active");
+    $(".tab-btn-4").click(function() {
+      $(".tab-4").addClass("active");
+      $(".tab-img-4").addClass("active");
     });
+
 
     
 

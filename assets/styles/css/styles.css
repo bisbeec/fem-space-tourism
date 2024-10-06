@@ -66,6 +66,14 @@ p, h1, h2, h3, h4, h5, h6 {
   padding-inline: 25px;
 }
 
+.col-70 {
+  width: 70%;
+}
+
+.col-60 {
+  width: 60%;
+}
+
 .col-50 {
   width: 50%;
 }
@@ -76,6 +84,14 @@ p, h1, h2, h3, h4, h5, h6 {
 
 .text-right {
   text-align: right;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-justify {
+  text-align: justify;
 }
 
 .sr-only {
@@ -105,6 +121,11 @@ p, h1, h2, h3, h4, h5, h6 {
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
+.d-flex--align-center {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
 
 .gap1 {
   gap: 1em;
@@ -130,7 +151,7 @@ p, h1, h2, h3, h4, h5, h6 {
   gap: 6em;
 }
 
-.btn-large {
+.btn-large, .btn-small {
   background-color: #fff;
   color: #0B0D17;
   font-size: 2rem;
@@ -151,12 +172,17 @@ p, h1, h2, h3, h4, h5, h6 {
           align-items: center;
   position: relative;
 }
-@media screen and (max-width: 620px) {
-  .btn-large {
-    font-size: 1.125rem;
+@media screen and (max-width: 890px) {
+  .btn-large, .btn-small {
+    font-size: 24px;
   }
 }
-.btn-large::after {
+@media screen and (max-width: 620px) {
+  .btn-large, .btn-small {
+    font-size: 18px;
+  }
+}
+.btn-large::after, .btn-small::after {
   content: "";
   background: rgba(255, 255, 255, 0.3);
   position: absolute;
@@ -170,12 +196,36 @@ p, h1, h2, h3, h4, h5, h6 {
   -webkit-transition: 0.3s scale ease;
   transition: 0.3s scale ease;
 }
-.btn-large:hover::after, .btn-large:focus-visible::after {
+.btn-large:hover::after, .btn-large:focus-visible::after, .btn-small:hover::after, .btn-small:focus-visible::after {
   scale: 1;
 }
 @media screen and (max-width: 620px) {
-  .btn-large {
+  .btn-large, .btn-small {
     width: 144px;
+  }
+}
+
+.btn-small {
+  width: 80px;
+  background-color: transparent;
+  color: #fff;
+  border: 1px solid #fff;
+}
+.btn-small::after {
+  content: none;
+}
+.btn-small.active {
+  background-color: #fff;
+  color: #0B0D17;
+}
+@media screen and (max-width: 890px) {
+  .btn-small {
+    width: 56px;
+  }
+}
+@media screen and (max-width: 620px) {
+  .btn-small {
+    width: 40px;
   }
 }
 
@@ -201,6 +251,10 @@ p, h1, h2, h3, h4, h5, h6 {
 
 .text-white {
   color: #fff;
+}
+
+.text-opaque {
+  opacity: 0.5;
 }
 
 /* typography */
@@ -275,7 +329,7 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 @media screen and (max-width: 620px) {
   .text-preset-1 {
-    font-size: 6.25rem;
+    font-size: 80px;
   }
 }
 
@@ -284,7 +338,7 @@ p, h1, h2, h3, h4, h5, h6 {
   letter-spacing: 0px;
   font-family: "Bellefair", serif;
 }
-@media screen and (max-width: 620px) {
+@media screen and (max-width: 890px) {
   .text-preset-2 {
     font-size: 3.5rem;
   }
@@ -296,9 +350,14 @@ p, h1, h2, h3, h4, h5, h6 {
   font-family: "Bellefair", serif;
   line-height: normal;
 }
+@media screen and (max-width: 890px) {
+  .text-preset-3 {
+    font-size: 40px;
+  }
+}
 @media screen and (max-width: 620px) {
   .text-preset-3 {
-    font-size: 2rem;
+    font-size: 24px;
   }
 }
 
@@ -307,9 +366,14 @@ p, h1, h2, h3, h4, h5, h6 {
   letter-spacing: 0px;
   font-family: "Bellefair", serif;
 }
+@media screen and (max-width: 890px) {
+  .text-preset-4 {
+    font-size: 24px;
+  }
+}
 @media screen and (max-width: 620px) {
   .text-preset-4 {
-    font-size: 1.125rem;
+    font-size: 18px;
   }
 }
 
@@ -318,9 +382,14 @@ p, h1, h2, h3, h4, h5, h6 {
   letter-spacing: 4px;
   font-family: "Barlow Condensed", sans-serif;
 }
+@media screen and (max-width: 890px) {
+  .text-preset-5 {
+    font-size: 20px;
+  }
+}
 @media screen and (max-width: 620px) {
   .text-preset-5 {
-    font-size: 1.125rem;
+    font-size: 16px;
   }
 }
 
@@ -341,11 +410,21 @@ p, h1, h2, h3, h4, h5, h6 {
   letter-spacing: 2px;
   font-family: "Barlow Condensed", sans-serif;
 }
+@media screen and (max-width: 620px) {
+  .text-preset-8 {
+    font-size: 14px;
+  }
+}
 
 .text-preset-9 {
   font-size: 18px;
   letter-spacing: 0px;
   font-family: "Barlow", sans-serif;
+}
+@media screen and (max-width: 890px) {
+  .text-preset-9 {
+    font-size: 16px;
+  }
 }
 
 html {
@@ -425,6 +504,19 @@ body.body-no-scroll {
     background-image: url("../../img/background-crew-mobile.jpg");
   }
 }
+.body--technology {
+  background-image: url("../../img/background-technology-desktop.jpg");
+}
+@media screen and (max-width: 890px) {
+  .body--technology {
+    background-image: url("../../img/background-technology-tablet.jpg");
+  }
+}
+@media screen and (max-width: 620px) {
+  .body--technology {
+    background-image: url("../../img/background-technology-mobile.jpg");
+  }
+}
 
 .body.body--home .primary-header {
   margin-bottom: 13em;
@@ -461,7 +553,7 @@ body.body-no-scroll {
   width: 45px;
   height: 45px;
   position: relative;
-  z-index: 2;
+  z-index: 3;
 }
 @media screen and (max-width: 620px) {
   .primary-header .logo-wrap {
@@ -494,6 +586,11 @@ body.body-no-scroll {
     -webkit-backdrop-filter: blur(1.25rem);
             backdrop-filter: blur(1.25rem);
     background: rgba(255, 255, 255, 0.1);
+  }
+  @media screen and (max-width: 890px) {
+    .primary-header .main-nav {
+      background: rgba(11, 13, 23, 0.5);
+    }
   }
 }
 .primary-header .main-nav ul {
@@ -529,6 +626,9 @@ body.body-no-scroll {
   }
 }
 @media screen and (max-width: 620px) {
+  .primary-header {
+    margin-bottom: 2.5em;
+  }
   .primary-header .mobile-nav-toggle {
     display: block;
     position: absolute;
@@ -549,7 +649,6 @@ body.body-no-scroll {
     padding-right: 0;
     padding-left: 25px;
     overflow: initial;
-    position: fixed;
     position: absolute;
     height: 100vh;
     width: 100%;
@@ -580,6 +679,19 @@ body.body-no-scroll {
   }
 }
 
+main .flow > h2:nth-of-type(2) {
+  margin-block: 0.3em 0.6em;
+}
+main p {
+  font-size: 18px;
+  letter-spacing: 0px;
+  font-family: "Barlow", sans-serif;
+}
+@media screen and (max-width: 890px) {
+  main p {
+    font-size: 16px;
+  }
+}
 main .interior-page-heading {
   font-size: 1.75rem;
   letter-spacing: 4px;
@@ -587,9 +699,14 @@ main .interior-page-heading {
   text-transform: uppercase;
   margin-bottom: 3em;
 }
+@media screen and (max-width: 890px) {
+  main .interior-page-heading {
+    font-size: 20px;
+  }
+}
 @media screen and (max-width: 620px) {
   main .interior-page-heading {
-    font-size: 1.125rem;
+    font-size: 16px;
   }
 }
 main .interior-page-heading span {
@@ -662,36 +779,27 @@ main .tabs-wrap button {
   padding-bottom: 4px;
   border-bottom: 3px solid transparent;
 }
+@media screen and (max-width: 620px) {
+  main .tabs-wrap button {
+    font-size: 14px;
+  }
+}
 main .tabs-wrap button.active {
   border-color: #fff;
 }
-main .planet-img, main .tab {
+main .tab-img, main .tab {
   display: none;
 }
-main .planet-img.active, main .tab.active {
+main .tab-img.active, main .tab.active {
   display: block;
 }
-main .planet-img img {
+main .tab-img img {
   width: 100%;
-}
-main .tab h1 {
-  font-size: 6.25rem;
-  letter-spacing: 0px;
-  font-family: "Bellefair", serif;
-  text-transform: uppercase;
-}
-@media screen and (max-width: 620px) {
-  main .tab h1 {
-    font-size: 3.5rem;
-  }
 }
 @media screen and (max-width: 620px) {
   main .tab h1 {
     margin-block: 0.5em;
   }
-}
-main .tab p {
-  text-align: justify;
 }
 @media screen and (max-width: 890px) {
   main .tab p {
@@ -741,31 +849,6 @@ main .crew-carousel .slide::after {
   height: 10%;
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(11, 13, 23, 0)), to(#0b0d17));
   background: linear-gradient(rgba(11, 13, 23, 0), #0b0d17);
-}
-main .crew-carousel .title {
-  font-size: 2rem;
-  letter-spacing: 0px;
-  font-family: "Bellefair", serif;
-  text-transform: uppercase;
-  opacity: 0.5;
-}
-@media screen and (max-width: 620px) {
-  main .crew-carousel .title {
-    font-size: 1.125rem;
-  }
-}
-main .crew-carousel .name {
-  font-size: 3.5rem;
-  letter-spacing: 0px;
-  font-family: "Bellefair", serif;
-  line-height: normal;
-  text-transform: uppercase;
-  margin-block: 0.5em;
-}
-@media screen and (max-width: 620px) {
-  main .crew-carousel .name {
-    font-size: 2rem;
-  }
 }
 main .crew-carousel p {
   position: relative;
@@ -823,4 +906,103 @@ main .crew-carousel .owl-dots .owl-dot {
 }
 main .crew-carousel .owl-dots .owl-dot.active {
   opacity: 1;
+}
+main .technology-tabs-outer-wrap {
+  margin-block: 11em 12em;
+  gap: 3em;
+}
+@media screen and (max-width: 890px) {
+  main .technology-tabs-outer-wrap {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 2em;
+    margin-top: 25em;
+  }
+}
+@media screen and (max-width: 620px) {
+  main .technology-tabs-outer-wrap {
+    margin-top: 19em;
+  }
+}
+main .technology-tabs-outer-wrap .vertical-tab-buttons ul {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  left: 0;
+}
+@media screen and (max-width: 890px) {
+  main .technology-tabs-outer-wrap .vertical-tab-buttons ul {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin-top: 2em;
+    gap: 1em;
+  }
+}
+main .tech-tab-content {
+  width: 100%;
+  max-width: 36vw;
+}
+@media screen and (max-width: 890px) {
+  main .tech-tab-content {
+    width: 100%;
+    text-align: center;
+    max-width: none;
+  }
+}
+main .tech-img-wrap {
+  position: absolute;
+  right: 0;
+  top: 280px;
+  width: 37vw;
+  max-width: 600px;
+  height: 100%;
+  max-height: 600px;
+  background-size: cover;
+  background-position: center;
+}
+@media screen and (max-width: 890px) {
+  main .tech-img-wrap {
+    height: 350px;
+    max-width: none;
+    width: 100%;
+    top: 260px;
+  }
+}
+@media screen and (max-width: 620px) {
+  main .tech-img-wrap {
+    height: 250px;
+    top: 220px;
+  }
+}
+main .tech-img-wrap.launch-vehicle {
+  background-image: url(../../img/image-launch-vehicle-portrait.jpg);
+}
+@media screen and (max-width: 890px) {
+  main .tech-img-wrap.launch-vehicle {
+    background-image: url(../../img/image-launch-vehicle-landscape.jpg);
+  }
+}
+main .tech-img-wrap.spaceport {
+  background-image: url(../../img/image-spaceport-portrait.jpg);
+}
+@media screen and (max-width: 890px) {
+  main .tech-img-wrap.spaceport {
+    background-image: url(../../img/image-spaceport-landscape.jpg);
+  }
+}
+main .tech-img-wrap.space-capsule {
+  background-image: url(../../img/image-space-capsule-portrait.jpg);
+}
+@media screen and (max-width: 890px) {
+  main .tech-img-wrap.space-capsule {
+    background-image: url(../../img/image-space-capsule-landscape.jpg);
+  }
 }

@@ -63,6 +63,15 @@ body {
 			background-image: url('../../img/background-crew-mobile.jpg');
 		}
 	}
+	&--technology {
+		background-image: url('../../img/background-technology-desktop.jpg');
+		@media screen and (max-width: $break-tablet) {
+			background-image: url('../../img/background-technology-tablet.jpg');
+		}
+		@media screen and (max-width: $break-mobile) {
+			background-image: url('../../img/background-technology-mobile.jpg');
+		}
+	}
 }
 
 .body.body--home .primary-header {
@@ -92,7 +101,7 @@ body {
 		margin-left: 50px;
 		width: 45px; height: 45px;
 		position: relative;
-		z-index: 2;
+		z-index: 3;
 		@media screen and (max-width: $break-mobile) {
 			width: 40px; height: 40px;
 			margin-left: $gutter;
@@ -115,7 +124,11 @@ body {
 		@supports (backdrop-filter: blur(1rem)) {
 			backdrop-filter: blur(1.25rem);
 			background: rgba($white, .1);
+			@media screen and (max-width: $break-tablet) {
+				background: rgba($blue900, .5);
+			}
 		}
+
 		ul {
 			gap: 2.5em;
 		}
@@ -148,6 +161,7 @@ body {
 		}
 	}
 	@media screen and (max-width: $break-mobile) {
+		margin-bottom: 2.5em;
 		.mobile-nav-toggle {
 			display: block;
 			position: absolute;
@@ -168,7 +182,6 @@ body {
 			padding-right: 0;
 			padding-left: $gutter;
 			overflow: initial;
-			position: fixed;
 			position: absolute;
 			height: 100vh;
 			width: 100%;
@@ -184,7 +197,6 @@ body {
 				flex-direction: column;
 				margin-top: 8em;
 				
-
 				li {
 					a {
 						padding-block: 10px;
@@ -199,6 +211,12 @@ body {
 
 
 main {
+	.flow >h2:nth-of-type(2) {
+		margin-block: .3em .6em;
+	}
+	p {
+		@include text-preset-9;
+	}
 	.interior-page-heading {
 		@include text-preset-5;
 		text-transform: uppercase;
@@ -263,27 +281,24 @@ main {
 		}
 	}
 
-	.planet-img, .tab {
+	.tab-img, .tab {
 		display: none;
 		&.active {
 			display: block;
 		}
 	}
 
-	.planet-img img {
+	.tab-img img {
 		width: 100%;
 	}
 
 	.tab {
 		h1 {
-			@include text-preset-2;
-			text-transform: uppercase;
 			@media screen and (max-width: $break-mobile) {
 				margin-block: .5em;
 			}
 		}
 		p {
-			text-align: justify;
 			@media screen and (max-width: $break-tablet) {
 				text-align: center;
 			}
@@ -326,16 +341,7 @@ main {
 				background: linear-gradient(rgba($blue900, 0), rgba($blue900, 1));
 			}
 		}
-		.title {
-			@include text-preset-4;
-			text-transform: uppercase;
-			opacity: .5;
-		}
-		.name {
-			@include text-preset-3;
-			text-transform: uppercase;
-			margin-block: .5em;
-		}
+		
 		p {
 			position: relative;
 			z-index: 1;
@@ -376,6 +382,82 @@ main {
 				&.active {
 					opacity: 1;
 				}
+			}
+		}
+	}
+
+
+	.technology-tabs-outer-wrap {
+		margin-block: 11em 12em;
+		gap: 3em;
+		@media screen and (max-width: $break-tablet) {
+			flex-direction: column;
+			gap: 2em;
+			margin-top: 25em;
+		}
+		@media screen and (max-width: $break-mobile) {
+			margin-top: 19em;
+		}
+		.vertical-tab-buttons {
+			ul {
+				flex-direction: column;
+				left: 0;
+				@media screen and (max-width: $break-tablet) {
+					flex-direction: row;
+					justify-content: center;
+					margin-top: 2em;
+					gap: 1em;
+				}
+			}
+		}
+	}
+
+	.tech-tab-content {
+		width: 100%;
+		max-width: 36vw;
+		@media screen and (max-width: $break-tablet) {
+			width: 100%;
+			text-align: center;
+			max-width: none;
+
+		}
+	}
+	.tech-img-wrap {
+		position: absolute;
+		right: 0; top: 280px;
+		width: 37vw;
+		max-width: 600px;
+		height: 100%;
+		max-height: 600px;
+		background-size: cover;
+		background-position: center;
+		@media screen and (max-width: $break-tablet) {
+			height: 350px;
+			max-width: none;
+			width: 100%;
+			top: 260px;
+		}
+		@media screen and (max-width: $break-mobile) {
+			height: 250px;
+			top: 220px;
+		}
+
+		&.launch-vehicle {
+			background-image: url(../../img/image-launch-vehicle-portrait.jpg);
+			@media screen and (max-width: $break-tablet) {
+				background-image: url(../../img/image-launch-vehicle-landscape.jpg);
+			}
+		}
+		&.spaceport {
+			background-image: url(../../img/image-spaceport-portrait.jpg);
+			@media screen and (max-width: $break-tablet) {
+				background-image: url(../../img/image-spaceport-landscape.jpg);
+			}
+		}
+		&.space-capsule {
+			background-image: url(../../img/image-space-capsule-portrait.jpg);
+			@media screen and (max-width: $break-tablet) {
+				background-image: url(../../img/image-space-capsule-landscape.jpg);
 			}
 		}
 	}
