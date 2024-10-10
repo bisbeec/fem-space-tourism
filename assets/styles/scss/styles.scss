@@ -113,12 +113,12 @@ body {
 		position: absolute;
 		background: rgba($blue900, .95);
 		right: 0;
-		width: 750px;
+		width: 736px;
 		height: 96px;
 		display: flex;
 		align-items: center;
 		justify-content: flex-end;
-		padding-right: 11%;
+		padding-right: 4.25%;
 		overflow: hidden;
 		z-index: 2;
 
@@ -131,7 +131,7 @@ body {
 		}
 
 		ul {
-			gap: 2.5em;
+			gap: 2.8em;
 		}
 		ul li a {
 			display: block;

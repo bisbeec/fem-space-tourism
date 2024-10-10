@@ -61,7 +61,7 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 .container {
-  max-width: 1110px;
+  max-width: 1150px;
   margin-inline: auto;
   padding-inline: 24px;
 }
@@ -568,7 +568,7 @@ body.body-no-scroll {
   position: absolute;
   background: rgba(11, 13, 23, 0.95);
   right: 0;
-  width: 750px;
+  width: 736px;
   height: 96px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -579,7 +579,7 @@ body.body-no-scroll {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
-  padding-right: 11%;
+  padding-right: 4.25%;
   overflow: hidden;
   z-index: 2;
 }
@@ -596,7 +596,7 @@ body.body-no-scroll {
   }
 }
 .primary-header .main-nav ul {
-  gap: 2.5em;
+  gap: 2.8em;
 }
 .primary-header .main-nav ul li a {
   display: block;
