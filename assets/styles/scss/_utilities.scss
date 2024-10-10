@@ -40,7 +40,7 @@
 	@include text-preset-4;
 	border-radius: 50%;
 	text-transform: uppercase;
-	width: 250px; aspect-ratio: 1/1;
+	width: 272px; aspect-ratio: 1/1;
 	@include flexCenter;
 	position: relative;
 	&::after {
@@ -66,13 +66,14 @@
 	width: 80px;
 	background-color: transparent;
 	color: $white;
-	border: 1px solid $white;
+	border: 1px solid rgba($white, .3);
 	&::after {
 		content: none;
 	}
 	&.active {
 		background-color: $white;
 		color: $blue900;
+		border: 1px solid rgba($white, 1);
 	}
 	@media screen and (max-width: $break-tablet) {
 		width: 56px;

@@ -85,21 +85,22 @@ body {
 }
 
 .primary-header {
-	margin-top: 3em;
-	margin-bottom: 4em;
+	margin-top: 3.7em;
+	margin-bottom: 3.4em;
 	align-items: center;
 	position: relative;
 	&::after {
 		content: "";
 		height: 1px;
-		width: 40%;
+		width: 39%;
 		background: rgba($white, .2);
 		position: absolute;
 		left: 10%;
+		z-index: 2;
 	}
 	.logo-wrap {
 		margin-left: 50px;
-		width: 45px; height: 45px;
+		width: 48px; aspect-ratio: 1/1;
 		position: relative;
 		z-index: 3;
 		@media screen and (max-width: $break-mobile) {
@@ -150,14 +151,15 @@ body {
 		}
 	}
 	@media screen and (max-width: $break-tablet) {
-		margin-top: 26px;
+		margin-top: 24px;
 		
 		&::after {
 			content: none;
 		}
 		.main-nav {
-			width: 640px;
+			max-width: 640px;
 			padding-right: $gutter;
+			background: rgba($white, .1);
 		}
 	}
 	@media screen and (max-width: $break-mobile) {
@@ -180,7 +182,7 @@ body {
 		.main-nav {
 			display: block;
 			padding-right: 0;
-			padding-left: $gutter;
+			padding-left: 32px;
 			overflow: initial;
 			position: absolute;
 			height: 100vh;
@@ -195,7 +197,8 @@ body {
 
 			ul {
 				flex-direction: column;
-				margin-top: 8em;
+				margin-top: 8.5em;
+				gap: .8em;
 				
 				li {
 					a {
@@ -220,15 +223,26 @@ main {
 	.interior-page-heading {
 		@include text-preset-5;
 		text-transform: uppercase;
-		margin-bottom: 3em;
+		margin-bottom: 4.5em;
 		span {
 			opacity: .5;
 			font-weight: 700;
 			margin-right: .5em;
 		}
+		&:has(~.owl-carousel) {
+			margin-bottom: 2em;
+		}
+		@media screen and (max-width: $break-tablet) {
+			margin-bottom: 3.5em;
+
+			&~.col-wrap {
+				gap: 3em;
+			}
+		}
 		@media screen and (max-width: $break-mobile) {
 			text-align: center;
 		}
+
 	}
 	.col-wrap {
 
@@ -237,12 +251,9 @@ main {
 		}
 
 		.col {
-			&.col-max-width {
-				max-width: 540px;
-				@media screen and (max-width: $break-tablet) {
-					max-width: 100%;
-				}
-			}
+			max-width: 540px;
+			margin-inline: auto;
+
 			@media screen and (max-width: $break-tablet) {
 				text-align: center;
 				width: 100%;
@@ -275,6 +286,10 @@ main {
 			@include text-preset-8;
 			padding-bottom: 4px;
 			border-bottom: 3px solid transparent;
+			transition: .3s border-color ease;
+			&:hover, &:focus-visible {
+				border-color: rgba(255, 255, 255, 0.5);
+			}
 			&.active {
 				border-color: $white;
 			}
@@ -290,12 +305,17 @@ main {
 
 	.tab-img img {
 		width: 100%;
+		max-width: 480px;
+		@media screen and (max-width: $break-tablet) {
+			max-width: 300px;
+			margin-inline: auto;
+		}
 	}
 
 	.tab {
 		h1 {
-			@media screen and (max-width: $break-mobile) {
-				margin-block: .5em;
+			@media screen and (max-width: $break-tablet) {
+				margin-block: .25em;
 			}
 		}
 		p {
@@ -360,7 +380,7 @@ main {
 		.owl-dots {
 			width: min-content;
 			display: flex;
-			gap: 1em;
+			gap: 3em;
 			position: relative;
 			top: -3em;
 			@media screen and (max-width: $break-tablet) {
@@ -370,15 +390,19 @@ main {
 				justify-content: center;
 				width: 100%;
 				z-index: -1;
+				gap: .8em;
 			}
 			@media screen and (max-width: $break-mobile) {
-				bottom: 65%;
+				bottom: 70%;
 			}
 			.owl-dot {
 				background-color: $white;
-				width: 10px; aspect-ratio: 1/1;
+				width: 15px; aspect-ratio: 1/1;
 				border-radius: 50%;
 				opacity: .5;
+				@media screen and (max-width: $break-tablet) {
+					width: 10px;
+				}
 				&.active {
 					opacity: 1;
 				}
@@ -418,7 +442,8 @@ main {
 		@media screen and (max-width: $break-tablet) {
 			width: 100%;
 			text-align: center;
-			max-width: none;
+			max-width: 512px;
+			margin-inline: auto;
 
 		}
 	}
